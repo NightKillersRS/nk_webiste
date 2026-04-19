@@ -1,0 +1,128 @@
+﻿@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  --bg-top: #07101b;
+  --bg-bottom: #02050b;
+  --panel-border: rgba(143, 212, 255, 0.12);
+  --panel-fill: rgba(8, 15, 28, 0.72);
+  --panel-strong: rgba(8, 15, 28, 0.9);
+  --text-main: #f7fbff;
+  --text-muted: #9cabc0;
+  --accent-blue: #2f85ff;
+  --accent-ice: #8fd4ff;
+  --accent-ember: #ff6a2f;
+  --font-heading: "Bahnschrift", "Trebuchet MS", sans-serif;
+  --font-body: "Segoe UI Variable", "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 52% 0%, rgba(48, 118, 255, 0.18), transparent 24%),
+    radial-gradient(circle at 18% 88%, rgba(255, 106, 47, 0.08), transparent 18%),
+    linear-gradient(180deg, var(--bg-top) 0%, #091120 34%, #07101a 68%, var(--bg-bottom) 100%);
+  color: var(--text-main);
+  font-family: var(--font-body);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.ui-copy {
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+
+.read-copy {
+  -webkit-user-select: text;
+  user-select: text;
+  cursor: default;
+}
+
+::selection {
+  background: rgba(88, 177, 255, 0.3);
+  color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+}
+
+.panel {
+  border: 1px solid var(--panel-border);
+  border-radius: 28px;
+  background: linear-gradient(180deg, rgba(18, 28, 50, 0.82), var(--panel-fill));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 24px 80px rgba(1, 6, 18, 0.6);
+  backdrop-filter: blur(18px);
+}
+
+.panel-strong {
+  background:
+    radial-gradient(circle at top right, rgba(60, 149, 255, 0.16), transparent 32%),
+    radial-gradient(circle at bottom left, rgba(255, 82, 30, 0.08), transparent 24%),
+    linear-gradient(180deg, rgba(10, 19, 35, 0.96), var(--panel-strong));
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(191, 228, 255, 0.8);
+}
+
+.eyebrow::before {
+  content: "";
+  width: 2.75rem;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(143, 212, 255, 0.85), transparent);
+}
+
+.hero-card {
+  border: 1px solid rgba(143, 212, 255, 0.14);
+  border-radius: 36px;
+  background:
+    radial-gradient(circle at top, rgba(74, 155, 255, 0.2), transparent 30%),
+    linear-gradient(180deg, rgba(13, 24, 43, 0.96), rgba(5, 10, 20, 0.92));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 30px 90px rgba(4, 9, 20, 0.68);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
